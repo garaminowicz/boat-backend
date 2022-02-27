@@ -16,6 +16,10 @@ function setTarget(target) {
     }
 }
 
+function getTarget() {
+    return targetPoint;
+}
+
 function simStep() {
     if (isRunning && targetPoint) {
         boats.forEach(boat => {
@@ -31,6 +35,7 @@ function simStep() {
 module.exports = {
     setRunning,
     setTarget,
+    getTarget,
     simStep,
     boats
 }

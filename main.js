@@ -13,6 +13,10 @@ app.use(cors())
 app.use('/api/boats', boatsRouter);
 app.use('/api/users', usersRouter);
 
+app.get('/api/target', (req, res) => {
+    res.send(sim.getTarget());
+});
+
 app.post('/api/target', (req, res) => {
     console.log(req.body);
     sim.setTarget(req.body);
