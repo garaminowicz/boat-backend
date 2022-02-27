@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors')
 
 const boatsRouter = require('./routes/boats');
 const usersRouter = require('./routes/users');
@@ -7,6 +8,7 @@ const sim = require('./sim.js');
 
 const app = express();
 app.use(express.json());
+app.use(cors())
 
 app.use('/api/boats', boatsRouter);
 app.use('/api/users', usersRouter);
