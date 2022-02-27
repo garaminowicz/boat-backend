@@ -16,7 +16,7 @@ class Boat {
         let targetHeading = geolib.getRhumbLineBearing(this.position, targetPoint);
         let headingDiff = normalizeAngle(targetHeading - this.heading);
         let turn = headingDiff < 180 ? 2 : -2;
-        this.heading += turn;
+        this.heading = normalizeAngle(this.heading + turn);
         this.speed = 100;
         this.position = geolib.computeDestinationPoint(this.position, this.speed, this.heading);
     };
